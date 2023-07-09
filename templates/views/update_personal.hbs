@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="/css/style1.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+             <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/user" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+      
+          <li><a class="nav-link scrollto " href="/user">Home</a></li>
+          <li><a class="nav-link scrollto" href="/user#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/user#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/user#portfolio">Portfolio</a></li>
+          
+          
+          <li><a class="nav-link scrollto" href="/user#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/profile">Back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    <h3 id="flash"> {{message}}</h1>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="/update_personal" method="post" name="update_personal">
+                    <h1>Personal Details</h1>
+                    <br>
+                    <span>Update your details</span>
+                    <div class="social-container">
+                    </div>
+                     <select class="form-control" id="employment" name="employment" placeholder="employment" oninput="em()">
+                        <option selected="selected" id="place" value="0">employment status</option>
+                        <option value="fully employed">fully employed</option>
+                        <option value="partially employed">partly employed</option>
+                        <option value="carer">carer</option>
+                        <option value="house person">house person</option>
+                        <option value="retired">retired</option>
+                        <option value="self employed">self employed</option>
+                        <option value="business">business</option>
+                        <option value="unemployed for less than 6 months">unemployed for less than 6 months</option>
+                        <option value="unemployed over above 6 months">unemployed over above 6 months</option>
+                        <option value="other">other</option>
+                    </select>
+                    <p class="valid" id="eem"></p>
+                    <select class="form-control" id="disability" name="disability" placeholder="disability" oninput="di()">
+                        <option selected="selected" id="place" value="0">disability</option>
+                        <option value="none">none</option>
+                        <option value="regarding mental health">regarding mental health</option>
+                        <option value="regarding mobility">regarding mobility</option>
+                        <option value="hearing impairment">hearing impairment</option>
+                        <option value="visual impairment">visual impairment</option>
+                        <option value="asthama or diabetes ">asthama or diabetes </option>
+                        <option value="post covid19">post covid19</option>
+                        <option value="complex disabilities">complex disabilities</option>
+                        <option value="other">other</option>
+                    </select>
+                    <p class="valid" id="edi"></p>
+                    <textarea rows="9" cols="27" id="about" name="about" placeholder="About" oninput="ab()"></textarea>
+                    <p class="valid" id="eab"></p>
+                    <textarea rows="2" cols="10" id="areas" name="areas" placeholder="Areas that you are interested in" oninput="ar()"></textarea>
+                    <p class="valid" id="ear"></p>
+                    <textarea rows="5" cols="10" id="activities" name="activities" placeholder="Activities that you are interested" oninput="ac()"></textarea>
+                    <p class="valid" id="eac"></p>
+                    <textarea rows="2" cols="10" id="skills" name="skills" placeholder="Skills you have" oninput="sk()"></textarea>
+                    <p class="valid" id="esk"></p>
+                    <input id="button1" class="btn" type="submit" value="Update" disabled style="background-color:rgb(57, 56, 56)">
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello!</h1><br>
+                        <p>Update your personal information here</p><br>
+                        <a href="/profile" class="ghost" id="login-star">back to profile page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let f1 = 1,
+                f4 = 1,
+                f3 = 1,
+                f2 = 1,f5=1,f6=1;
+            let b2 = document.getElementById('button1');
+            function ab() {
+                let e = document.getElementById('about');
+                let x = document.getElementById('eab');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eab').innerHTML = "Field cannot be empty";
+                    f1 = 1;
+                } else {
+                    x.style.display = "none";
+                    f1 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5==1 || f6==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ar() {
+                let e = document.getElementById('areas');
+                let x = document.getElementById('ear');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('ear').innerHTML = "Field cannot be empty";
+                    f2 = 1;
+                } else {
+                    x.style.display = "none";
+                    f2 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5==1 || f6==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ac() {
+                let e = document.getElementById('activities');
+                let x = document.getElementById('eac');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eac').innerHTML = "Field cannot be empty";
+                    f3 = 1;
+                } else {
+                    x.style.display = "none";
+                    f3 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5==1 || f6==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function sk() {
+                let e = document.getElementById('skills');
+                let x = document.getElementById('esk');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('esk').innerHTML = "Field cannot be empty";
+                    f4 = 1;
+                } else {
+                    x.style.display = "none";
+                    f4 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5==1 || f6==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+                function em() {
+                let e = document.getElementById('employment');
+                let x = document.getElementById('eem');
+                if (e.value == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eem').innerHTML = "This field is mandatory";
+                    f5 = 1;
+                } else {
+                    x.style.display = "none";
+                    f5 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5==1 || f6==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function di() {
+                let e = document.getElementById('disability');
+                let x = document.getElementById('edi');
+                if (e.value == 0) {
+                    x.style.display = "block";
+                    document.getElementById('edi').innerHTML = "This field is mandatory";
+                    f6 = 1;
+                } else {
+                    x.style.display = "none";
+                    f6 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5==1 || f6==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+        </script>
+</body>
+</html>

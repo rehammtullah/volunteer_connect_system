@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seek Help</title>
+    <link rel="stylesheet" href="/css/style1.css" />
+      <link href="/css/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/css/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/css/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/css/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/css/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    a{
+        text-decoration: none;
+    }
+    .valid{
+        color:red;
+        font-size:12px;
+        font-weight: bold;
+    }
+    #flash {
+    z-index: 1;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    color: rgb(225, 47, 11);
+}
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+             <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/user" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+      
+          <li><a class="nav-link scrollto " href="/user">Home</a></li>
+<li><a class="nav-link scrollto active" href="/new_request">Seek Help</a></li>
+       
+         <li class="dropdown"><a href="/view_requests"><span>Requests</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/view_requests">All Requests</a></li>
+              <li class="dropdown"><a href="#"><span>Selective Requests</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                 <li class="dropdown"><a href="/my_requests"><span>My Requests</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+               <li><a href="/my_requests">My Requests</a></li>
+                  <li><a href="/my_accepted">My Accepted Requests</a></li>
+                  <li><a href="/my_pending">My Pending Requests</a></li>
+                </ul>
+              </li>
+                <li class="dropdown"><a href="/others_accepted">Others Accepted Requests<i class="bi bi-chevron-right"></i></a>
+                <ul>
+              
+                  <li><a href="/others_accepted">Others Accepted Requests</a></li>
+                  <li><a href="/others_pending">Others Pending Requests</a></li>
+                </ul>
+              </li>
+                  
+                  
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+           <li class="dropdown" ><div id="logo" >
+        <a href="/profile" ><div class="logoo" style="display: flex;align-items: center;justify-content: center;flex-direction: column;margin-top:0px"><img src="/images/{{user_image}}" alt="" style="width:46px;height:46px;border-radius:23px;"></div></a> </div></a>
+            <ul>
+              <li><a href="/profile">View Profile</a></li>
+              <li><a href="/logout">Logout</a></li><!-- change it to input type-->
+              
+            </ul>
+          </li>
+
+       
+        </ul>
+      </nav><!-- .navbar -->
+                    <p class="valid" id="flash" style="font-size:20px;font-weight:bolder;">{{message}}</p>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container" style="width:100%;background-color:white" >
+                <form action="/new_request" method="post" name="personal">
+                    <h1>Help Request Form</h1>
+                    <br>
+                    <span>Fill the details as asked</span>
+                    <div class="social-container">
+                    </div>
+                    <textarea rows="2" cols="10" id="subject" name="subject" placeholder="subject" oninput="su()"></textarea>
+                    <p class="valid" id="esu"></p>
+                    <textarea rows="12" cols="10" id="body" name="body" placeholder="body of help request" oninput="bo()"></textarea>
+                    <p class="valid" id="ebo"></p>
+                    <textarea rows="1" cols="10" id="tag1" name="tag1" placeholder="write a tag describing your request like (#health issue)" oninput="ta1()"></textarea>
+                    <p class="valid" id="eta1"></p>
+					 <textarea rows="1" cols="10" id="tag2" name="tag2" placeholder="write a tag describing your request like (#helping poor)" oninput="ta2()"></textarea>
+                    <p class="valid" id="eta2"></p>
+                   
+                    <input id="button1" class="btn" type="submit" value="submit" disabled style="background-color:rgb(57, 56, 56)">
+                </form>
+            </div>
+       
+        </div>
+        <script>
+            let f1 = 1,
+              f4=1,
+                f3 = 1,
+                f2 = 1;
+            let b2 = document.getElementById('button1');
+            function su() {
+                let e = document.getElementById('subject');
+                let x = document.getElementById('esu');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('esu').innerHTML = "Field cannot be empty";
+                    f1 = 1;
+                } else {
+                    x.style.display = "none";
+                    f1 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1||f4==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function bo() {
+                let e = document.getElementById('body');
+                let x = document.getElementById('ebo');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('ebo').innerHTML = "Field cannot be empty";
+                    f2 = 1;
+                } else {
+                    x.style.display = "none";
+                    f2 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ta1() {
+                let e = document.getElementById('tag1');
+                let x = document.getElementById('eta1');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eta1').innerHTML = "Field cannot be empty";
+                    f3 = 1;
+                } else {
+                    x.style.display = "none";
+                    f3 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+			   function ta2() {
+                let e = document.getElementById('tag2');
+                let x = document.getElementById('eta2');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eta2').innerHTML = "Field cannot be empty";
+                    f4 = 1;
+                } else {
+                    x.style.display = "none";
+                    f4 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+             let id = document.getElementById('flash');
+            setTimeout(function() {
+                var alertElement = document.getElementById("flash");
+                alertElement.style.display = "none";
+            }, 4000);
+        </script>
+</body>
+</html>

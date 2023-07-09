@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/css/style1.css" />
+    <!-- Favicons-->
+  
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+
+
+
+      <nav id="navbar" class="navbar">
+        <ul>
+
+      <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/home" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+          <li><a class="nav-link scrollto" href="/home">Home</a></li>
+          <li><a class="nav-link scrollto active" href="/login">Login or Signup</a></li>
+          <li><a class="nav-link scrollto" href="/home#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/home#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/home#portfolio">Portfolio</a></li>
+          
+          
+          <li><a class="nav-link scrollto" href="/home#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/home">Back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  
+
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="/register_email" method="post" id="register" onsubmit="return validateForm()">
+                    <h1>Create Account</h1>
+                    <br>
+                    <span>or use your social account for registration</span>
+                    <div class="social-container">
+                        <a href="#" class="social"><img src="https://img.freepik.com/free-icon/search_318-265146.jpg"><i class="fab fa-google-plus-g"></i></a>
+                    </div>
+                     <h1>Enter Your Gmail Account Id for Registration</h1>
+                    <input name="email" placeholder="Email" type="text" id="email2" oninput="emmail2()" />
+                    <p class="valid" id="eemail2"></p>
+                    <p class="valid" id="wemail2"></p>
+
+                    <input id="button" value="Next" type="submit"  disabled style="background-color:rgb(57, 56, 56)" />
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="/login" method="post" name="login">
+                    <h1>Sign in</h1>
+                    <br>
+                    <span>or sign in with your social account</span>
+                    <div class="social-container">
+                        <a href="#" class="social"><img src="https://img.freepik.com/free-icon/search_318-265146.jpg"><i class="fab fa-google-plus-g"></i></a>
+                    </div>
+                    <p class="valid" id="flash" style="font-size:20px;font-weight:bolder;">{{message}}</p>
+                    <input type="text" id="email" name="email" placeholder="email" oninput="emmail()">
+                                        <input type="hidden" name="is_logged_in">
+
+                    <p class="valid" id="eemail"></p>
+                    <p class="valid" id="wemail"></p>
+                    <input type="password" id="password" name="password" placeholder="password" oninput="passs()">
+                    <p class="valid" id="epass"></p>
+                    <p class="valid" id="wpass"></p>
+                    <a href="forget_password">Forgot your password?</a>
+                    <input id="button1" class="btn"  type="submit" value="Sign In" disabled style="background-color:rgb(57, 56, 56)">
+                    <p class="valid" id="wbu"></p>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1><br>
+                        <p>Share your contact infromation and login again</p><br>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello!</h1><br>
+                        <p>"A helping hand can be a ray of sunshine in a cloudy world. So try to be a rainbow in someone's cloud"</p><br>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/css/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/css/assets/vendor/aos/aos.js"></script>
+  <script src="/css/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/css/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/css/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/css/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/css/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/css/assets/js/main.js"></script>
+
+        <script>
+         
+            const signUpButton = document.getElementById('signUp');
+            const signInButton = document.getElementById('signIn');
+            const container = document.getElementById('container');
+            signUpButton.addEventListener('click', () =>
+                container.classList.add('right-panel-active'));
+            signInButton.addEventListener('click', () =>
+                container.classList.remove('right-panel-active'));
+            let id = document.getElementById('flash');
+            setTimeout(function() {
+                var alertElement = document.getElementById("flash");
+                alertElement.style.display = "none";
+            }, 4000);
+            //from here validation starts
+            let f1 = 1,
+                f2 = 1,
+                f3 = 1,
+                f4 = 1;
+            let b = document.getElementById('button1');
+            let b2 = document.getElementById('button');
+            function emmail() {
+                let e = document.getElementById('email');
+                let flag = 0;
+                let x = document.getElementById('eemail');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eemail').innerHTML = "Email cannot be empty";
+                    flag = 1;
+                    f1 = 1;
+                } else {
+                    document.getElementById('eemail').style.display = "none";
+                    f1 = 0;
+                }
+                if (((e.value.substring(e.value.length - 10) != "@gmail.com") && (e.value.substring(e.value.length - 12) != "@iiita.ac.in")) && flag == 0) {
+                    document.getElementById('wemail').style.display = "block";
+                    document.getElementById('wemail').innerHTML = "Invalid Format";
+                    f3 = 1;
+                } else {
+                    document.getElementById('wemail').style.display = "none";
+                    f3 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1) {
+                    b.disabled = true;
+                    b.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b.style.backgroundColor = '#2dc997';
+                    b.disabled = false;
+                }
+            }
+            function passs() {
+                let flag = 0;
+                let e = document.getElementById('password');
+                let x = document.getElementById('epass');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('epass').innerHTML = "Password cannot be empty";
+                    f2 = 1;
+                } else {
+                    x.style.display = "none";
+                    f2 = 0;
+                }
+                if (e.value.length < 8 && flag == 0) {
+                    document.getElementById('wpass').style.display = "block";
+                    document.getElementById('wpass').innerHTML = "Password should be atleast 8 characters";
+                    f4 = 1;
+                    console.log('hi')
+                } else {
+                    document.getElementById('wpass').style.display = "none";
+                    f4 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1) {
+                    b.disabled = true;
+                    b.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b.style.backgroundColor = '#2dc997';
+                    b.disabled = false;
+                }
+            }
+            //from here signup validation
+            let s1 = 1;
+            function emmail2() {
+                let e = document.getElementById('email2');
+                let flag = 0;
+                let x = document.getElementById('eemail2');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eemail2').innerHTML = "Email cannot be empty";
+                    flag = 1;
+                    s1 = 1;
+                } else {
+                    document.getElementById('eemail2').style.display = "none";
+                    s1 = 0;
+                }
+                if (((e.value.substring(e.value.length - 10) != "@gmail.com") && (e.value.substring(e.value.length - 12) != "@iiita.ac.in")) && flag == 0) {
+                    document.getElementById('wemail2').style.display = "block";
+                    document.getElementById('wemail2').innerHTML = "Invalid Format";
+                    s2 = 1;
+                } else {
+                    document.getElementById('wemail2').style.display = "none";
+                    s2 = 0;
+                }
+                if (s1 == 1 || s2 == 1 ) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            
+            //request after login
+        </script>
+</body>
+</html>

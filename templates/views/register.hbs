@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="/css/style1.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+             <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/home" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+          <li><a class="nav-link scrollto " href="/home">Home</a></li>
+                <li><a class="nav-link scrollto" href="/login">Login</a></li>
+       <li><a class="nav-link scrollto active" href="/update">Communication Details</a></li>
+          <li><a class="nav-link scrollto" href="/home#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/home#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/home#portfolio">Portfolio</a></li>
+          
+          
+          <li><a class="nav-link scrollto" href="/home#contact">Contact</a></li>
+          
+          <li><a class="nav-link scrollto" href="/login">Back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    <h3 id="flash"> {{message}}</h1>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+
+                <form action="/register" method="post" name="update">
+             <h1>Create Account</h1>
+                    <br>
+                   <input name="email"  type="hidden" id="email" value="{{email}}" />
+
+                    <input name="firstname" placeholder="First Name" type="text" id="firstname" oninput="name1()" />
+                    <p class="valid" id="efname"></p>
+                    <input name="surname" placeholder="Sur Name" type="text" id="surname" oninput="name2()" />
+                    <p class="valid" id="esname"></p>
+
+                    <input name="password" placeholder="Password" type="password" id="password2" oninput="passs2()" />
+                    <p class="valid" id="epass2"></p>
+                    <p class="valid" id="wpass2"></p>
+                    <input name="cpassword" placeholder="Confrim Password" type="password" id="cpassword" oninput="cpasss()" />
+                    <p class="valid" id="wcpass"></p>
+                    <input type="number" id="aadhar" name="aadhar" placeholder="Aadhar" id="aadhar" oninput="ad()">
+                    <p class="valid" id="ead"></p>
+                    <p class="valid" id="wad"></p>
+                    <input type="number" id="phone" name="phone" placeholder="Phone" id="phone" oninput="ph()">
+                    <p class="valid" id="eph"></p>
+                    <p class="valid" id="wph"></p>
+                    <input type="number" id="postal" name="postal" placeholder="Postal" id="postal" oninput="po()">
+                    
+                    <p class="valid" id="epo"></p>
+                    <input id="button" value="Next" type="submit"  disabled style="background-color:rgb(57, 56, 56)" />
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello!</h1><br>
+                        <p>"A helping hand can be a ray of sunshine in a cloudy world. So try to be a rainbow in someone's cloud"</p><br>
+                        <a href="/login" id="login-star" class="ghost">back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+             const signUpButton = document.getElementById('signUp');
+            const signInButton = document.getElementById('signIn');
+            const container = document.getElementById('container');
+         
+            //from here validation starts
+            
+            //from here signup validation
+            let 
+                
+                s3 = 1,
+                s4 = 1,
+                s5 = 1,
+                s6 = 1,
+                s7 = 1,
+                s8 = 1,
+                s9 = 1,
+                s10 = 1,
+                s11 = 1,
+                s12 = 1;
+          let b = document.getElementById('button1');
+            let b2 = document.getElementById('button');
+            function passs2() {
+                let flag = 0;
+                let e = document.getElementById('password2');
+                let x = document.getElementById('epass2');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    s3 = 1;
+                    x.style.display = "block";
+                    document.getElementById('epass2').innerHTML = "Password cannot be empty";
+                } else {
+                    s3 = 0;
+                    x.style.display = "none";
+                }
+                if (e.value.length < 8 && flag == 0) {
+                    document.getElementById('wpass2').style.display = "block";
+                    document.getElementById('wpass2').innerHTML = "Password should be atleast 8 characters";
+                    s4 = 1;
+                } else {
+                    document.getElementById('wpass2').style.display = "none";
+                    s4 = 0;
+                }
+                let f = document.getElementById('cpassword');
+                let xx = document.getElementById('wcpass');
+                if (f.value != document.getElementById('password2').value) {
+                    if(f.value.length !=0){
+                    flag = 1;
+                    xx.style.display = "block";
+                    document.getElementById('wcpass').innerHTML = "Password did not match";
+                    s11 = 1;
+                    }
+                    else{
+                    s11=1;    
+
+                    }
+                } else {
+                    xx.style.display = "none";
+                    s11 = 0;
+                    
+                }
+                if ( s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function name1() {
+                let e = document.getElementById('firstname');
+                let x = document.getElementById('efname');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('efname').innerHTML = "Name cannot be empty";
+                    s12 = 1;
+                } else {
+                    x.style.display = "none";
+                    s12 = 0;
+                }
+                if ( s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function name2() {
+                let e = document.getElementById('surname');
+                let x = document.getElementById('esname');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('esname').innerHTML = "Name cannot be empty";
+                    s5 = 1;
+                } else {
+                    x.style.display = "none";
+                    s5 = 0;
+                }
+                if (s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ad() {
+                let flag = 0;
+                let e = document.getElementById('aadhar');
+                let x = document.getElementById('ead');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('ead').innerHTML = "Aadhar number cannot be empty";
+                    s6 = 1;
+                } else {
+                    x.style.display = "none";
+                    s6 = 0;
+                }
+                if (e.value.length != 12 && flag == 0) {
+                    document.getElementById('wad').style.display = "block";
+                    document.getElementById('wad').innerHTML = "AAdhar number should be 12 characters";
+                    s7 = 1;
+                } else {
+                    document.getElementById('wad').style.display = "none";
+                    s7 = 0;
+                }
+                if (s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function po() {
+                let e = document.getElementById('postal');
+                let x = document.getElementById('epo');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('epo').innerHTML = "Postal number cannot be empty";
+                    s8 = 1;
+                } else {
+                    x.style.display = "none";
+                    s8 = 0;
+                }
+                if (s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ph() {
+                let flag = 0;
+                let e = document.getElementById('phone');
+                let x = document.getElementById('eph');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('eph').innerHTML = "Phone number cannot be empty";
+                    s9 = 1;
+                } else {
+                    x.style.display = "none";
+                    s9 = 0;
+                }
+                if (e.value.length != 10 && flag == 0) {
+                    document.getElementById('wph').style.display = "block";
+                    document.getElementById('wph').innerHTML = "Phone number should be 10 characters";
+                    s10 = 1;
+                } else {
+                    document.getElementById('wph').style.display = "none";
+                    s10 = 0;
+                }
+                if (s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function cpasss() {
+                let e = document.getElementById('cpassword');
+                let x = document.getElementById('wcpass');
+                if (e.value != document.getElementById('password2').value) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('wcpass').innerHTML = "Password did not match";
+                    s11 = 1;
+                } else {
+                    x.style.display = "none";
+                    s11 = 0;
+                }
+                if (s3 == 1 || s4 == 1 || s5 == 1 || s6 == 1 || s7 == 1 || s8 == 1 || s9 == 1 || s10 == 1 || s11 == 1 || s12 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+        </script>
+</body>
+</html>

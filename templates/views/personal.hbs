@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="/css/style1.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+             <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/home" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+      
+          <li><a class="nav-link scrollto " href="/home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/login">Login</a></li>
+       <li><a class="nav-link scrollto active" href="/personal">Personal Details</a></li>
+          <li><a class="nav-link scrollto" href="/home#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/home#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/home#portfolio">Portfolio</a></li>
+          
+          
+          <li><a class="nav-link scrollto" href="/home#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/update">Back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    <h3 id="flash"> {{message}}</h1>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="/personal" method="post" name="personal">
+                    <h1>Personal Details</h1>
+                    <br>
+                    <span>Fill your details</span>
+                    <div class="social-container">
+                    </div>
+                                       <input name="email"  type="hidden" id="email" value="{{email}}" />
+                                         <input name="s"  type="hidden" id="s" value="{{s}}" />
+                                       <input name="pass"  type="hidden" id="pass" value="{{pass}}" />
+                                       <input name="aadhar"  type="hidden" id="aadhar" value="{{aadhar}}" />
+                                       <input name="phone"  type="hidden" id="phone" value="{{phone}}" />
+                                       <input name="postal"  type="hidden" id="postal" value="{{postal}}" />
+                                        <input name="building"  type="hidden" id="building" value="{{building}}" />
+                                         <input name="house"  type="hidden" id="house" value="{{house}}" />
+                                         <input name="street"  type="hidden" id="street" value="{{street}}" />
+                                         <input name="city"  type="hidden" id="city" value="{{city}}" />
+                                         <input name="state"  type="hidden" id="state" value="{{state}}" />
+                                         <input name="country"  type="hidden" id="country" value="{{country}}" />
+                                         <input name="date"  type="hidden" id="date" value="{{date}}" />
+                                         <input name="gender"  type="hidden" id="gender" value="{{gender}}" />
+
+                    <textarea rows="9" cols="27" id="about" name="about" placeholder="About" oninput="ab()"></textarea>
+                    <p class="valid" id="eab"></p>
+                    <textarea rows="2" cols="10" id="areas" name="areas" placeholder="Areas that you are interested in" oninput="ar()"></textarea>
+                    <p class="valid" id="ear"></p>
+                    <textarea rows="5" cols="10" id="activities" name="activities" placeholder="Activities that you are interested" oninput="ac()"></textarea>
+                    <p class="valid" id="eac"></p>
+                    <textarea rows="2" cols="10" id="skills" name="skills" placeholder="Skills you have" oninput="sk()"></textarea>
+                    <p class="valid" id="esk"></p>
+                    <input id="button1" class="btn" type="submit" value="Next" disabled style="background-color:rgb(57, 56, 56)">
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Welcome Back!</h1><br>
+                        <p>Tell us a bit more about yourself</p><br>
+                        <a href="/login" class="ghost" id="login-star">back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let f1 = 1,
+                f4 = 1,
+                f3 = 1,
+                f2 = 1;
+            let b2 = document.getElementById('button1');
+            function ab() {
+                let e = document.getElementById('about');
+                let x = document.getElementById('eab');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eab').innerHTML = "Field cannot be empty";
+                    f1 = 1;
+                } else {
+                    x.style.display = "none";
+                    f1 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ar() {
+                let e = document.getElementById('areas');
+                let x = document.getElementById('ear');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('ear').innerHTML = "Field cannot be empty";
+                    f2 = 1;
+                } else {
+                    x.style.display = "none";
+                    f2 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ac() {
+                let e = document.getElementById('activities');
+                let x = document.getElementById('eac');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eac').innerHTML = "Field cannot be empty";
+                    f3 = 1;
+                } else {
+                    x.style.display = "none";
+                    f3 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function sk() {
+                let e = document.getElementById('skills');
+                let x = document.getElementById('esk');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('esk').innerHTML = "Field cannot be empty";
+                    f4 = 1;
+                } else {
+                    x.style.display = "none";
+                    f4 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+        </script>
+</body>
+</html>

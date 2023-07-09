@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="/css/style1.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+             <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/home" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+          <li><a class="nav-link scrollto " href="/home">Home</a></li>
+                <li><a class="nav-link scrollto" href="/login">Login</a></li>
+       <li><a class="nav-link scrollto active" href="update">Communication Details</a></li>
+          <li><a class="nav-link scrollto" href="/home#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/home#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/home#portfolio">Portfolio</a></li>
+          
+          
+          <li><a class="nav-link scrollto" href="/home#contact">Contact</a></li>
+          
+          <li><a class="nav-link scrollto" href="/login">Back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    <h3 id="flash"> {{message}}</h1>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="/update" method="post" name="update">
+                    <h1>Communication Details</h1>
+                    <br>
+                    <span>Fill your details</span>
+                    <div class="social-container">
+                    </div>
+                                       <input name="email"  type="hidden" id="email" value="{{email}}" />
+                                     <input name="s"  type="hidden" id="s" value="{{s}}" />
+                                       <input name="pass"  type="hidden" id="pass" value="{{pass}}" />
+                                       <input name="aadhar"  type="hidden" id="aadhar" value="{{aadhar}}" />
+                                       <input name="phone"  type="hidden" id="phone" value="{{phone}}" />
+                                       <input name="postal"  type="hidden" id="postal" value="{{postal}}" />
+
+
+                    <input type="text" id="building" name="building" placeholder="building" oninput="build()" />
+                    <p class="valid" id="ebuild"></p>
+                    <input type="text" id="house" name="house" placeholder="house" oninput="ho()" />
+                    <p class="valid" id="eho"></p>
+                    <input type="text" id="street" name="street" placeholder="street" oninput="str()" />
+                    <p class="valid" id="estr"></p>
+                    <input type="text" id="city" name="city" placeholder="city" oninput="ci()" />
+                    <p class="valid" id="eci"></p>
+                    <input type="text" id="state" name="state" placeholder="state" oninput="st()" />
+                    <p class="valid" id="est"></p>
+                    <input type="text" id="country" name="country" placeholder="residential country" oninput="co()" />
+                    <p class="valid" id="eco"></p>
+                    <input placeholder="date of birth" type="text" onfocus="(this.type = 'date')" onblur="(this.type = 'text')" id="date" oninput="da()" name="date">
+                    <p class="valid" id="eda"></p>
+                    <select class="form-control" id="gender" name="gender" placeholder="gender" oninput="ge()">
+                        <option selected="selected" id="place" value="0">Gender</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                        <option value="gender not disclosed">gender don't want to disclose</option>
+                    </select>
+                    <p class="valid" id="ege"></p>
+                    <input id="button1" class="btn" type="submit" value="Next" disabled style="background-color:rgb(57, 56, 56)">
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello!</h1><br>
+                        <p>"A helping hand can be a ray of sunshine in a cloudy world. So try to be a rainbow in someone's cloud"</p><br>
+                        <a href="/login" id="login-star" class="ghost">back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let f1 = 1,
+                f8 = 1,
+                f7 = 1,
+                f6 = 1,
+                f5 = 1,
+                f4 = 1,
+                f3 = 1,
+                f2 = 1;
+            let b2 = document.getElementById('button1');
+            function build() {
+                let e = document.getElementById('building');
+                let x = document.getElementById('ebuild');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('ebuild').innerHTML = "Field cannot be empty";
+                    f1 = 1;
+                } else {
+                    x.style.display = "none";
+                    f1 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ho() {
+                let e = document.getElementById('house');
+                let x = document.getElementById('eho');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eho').innerHTML = "Field cannot be empty";
+                    f2 = 1;
+                } else {
+                    x.style.display = "none";
+                    f2 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function str() {
+                let e = document.getElementById('street');
+                let x = document.getElementById('estr');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('estr').innerHTML = "Field cannot be empty";
+                    f3 = 1;
+                } else {
+                    x.style.display = "none";
+                    f3 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ci() {
+                let e = document.getElementById('city');
+                let x = document.getElementById('eci');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eci').innerHTML = "Field cannot be empty";
+                    f4 = 1;
+                } else {
+                    x.style.display = "none";
+                    f4 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function st() {
+                let e = document.getElementById('state');
+                let x = document.getElementById('est');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('est').innerHTML = "Field cannot be empty";
+                    f5 = 1;
+                } else {
+                    x.style.display = "none";
+                    f5 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function co() {
+                let e = document.getElementById('country');
+                let x = document.getElementById('eco');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eco').innerHTML = "Field cannot be empty";
+                    f6 = 1;
+                } else {
+                    x.style.display = "none";
+                    f6 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function da() {
+                let e = document.getElementById('date');
+                let x = document.getElementById('eda');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eda').innerHTML = "this field is mandatory";
+                    f7 = 1;
+                } else {
+                    x.style.display = "none";
+                    f7 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ge() {
+                let e = document.getElementById('gender');
+                let x = document.getElementById('ege');
+                if (e.value == 0) {
+                    x.style.display = "block";
+                    document.getElementById('ege').innerHTML = "This field is mandatory";
+                    f8 = 1;
+                } else {
+                    x.style.display = "none";
+                    f8 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+        </script>
+</body>
+</html>

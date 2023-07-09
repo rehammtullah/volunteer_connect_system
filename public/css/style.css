@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/images/login.jpg');
+     background-attachment: fixed;
+
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    width: 750px;
+    background-color: rgba(255, 255, 255, 0.41);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 20px;
+  }
+  .form-container1{
+
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.419);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 20px;
+
+  }
+  
+  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 2px;
+    color: rgb(1, 1, 35);
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  select {
+    padding: 10px;
+    border-color: black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #ffffffc1;
+  }
+  #date,#month,#year{
+    padding: 10px;
+    border-color: black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width:150px;
+  }
+  .daob{
+   display: flex;
+   gap: 5px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+  }
+  a{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3197ce;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    text-decoration: none;
+
+
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #025d17;
+  }
+  a:hover {
+    background-color: #057ee1;
+    text-decoration: none;
+
+
+  }
+  .valid{
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: rgb(226, 5, 31);
+
+  }
+  

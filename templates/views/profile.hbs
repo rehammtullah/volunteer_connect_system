@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> User Profile</title>
+
+    <link rel="shortcut icon" href="/css/assets2/images/fav.jpg">
+    <link rel="stylesheet" href="/css/assets2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/assets2/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/assets2/css/style.css" />
+    <style>
+        
+
+  
+  
+  span {
+    display: inline-flex;
+    padding: .2em;
+    height: 2em;
+  }
+  .imagelabel:hover{
+    cursor: pointer;
+    
+  }
+  
+
+#output {
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.image-box:hover #output  {
+  opacity: 0.3;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+        <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+    <div class="container-fluid overcover">
+        <div class="container profile-box">
+            <div class="head-top row">
+                <ul>
+                    <li><a class="pro" href="/user">Home</a></li>
+                    <li class="act"><a href="#about">About</a></li>
+                    <li class="pro"><a href="#profile">Profile</a></li>
+                    <li class="res"><a href="#profile">Communication Details</a></li>
+                     <li class="res"><a href="#profile">Personal Interests</a></li>
+                     <li class="res"><a href="#profile">Work</a></li>
+
+                    
+                </ul>
+            </div>
+            <div id="about" class="home row">
+                <div class="image-box">
+            
+                   <form action="/add_image" method="post" id="myimage" enctype="multipart/form-data" >
+                   <label for="filename" class="imagelabel" style="background-image:url('/images/imageadd.png');border-radius:200px;  background-repeat: no-repeat; background-size: cover;">
+                    <img src=" /images/{{result.[1].image}}" id="output" alt=""   style="width:400px;height:250px;border-radius:200px; " >
+                             <input type="file" name="filename" id="filename" onchange="loadFile(event)" style="display:none" accept="image/*" >
+                    </label>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="basic-detail row">
+                <div class="col-md-8 detail-col">
+                    <h2>{{result.[0].name}}</h2>
+                    <p>{{result.[2].about}}</p>
+                   
+                </div>
+
+            </div>
+
+
+            <section id="profile" class="home-dat">
+                <div class="row no-margin home-det">
+
+                    <div class="col-md-12 home-dat">
+                        
+                        <div class="links">
+                            <div class="row ">
+                                <div class="col-xl-6 col-md-12">
+                                    
+                                </div>
+                                <div class="col-xl-6 col-md-12">
+                                    <ul class="social-link">
+                                        <li><i class="fab fa-google"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jumbo-address">
+                             <div class="sec-title">
+                    <h2>Communication Details</h2>
+                </div>
+                            <div class="row no-margin">
+                                <div class="col-lg-6 no-padding">
+
+                                    <table class="addrss-list">
+                                        <tbody>
+                                            <tr>
+                                                <th>Email</th>
+                                                <td>{{result.[0].email}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Mobile No</th>
+                                                <td>{{result.[0].phone}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Aadhar</th>
+                                                <td>{{result.[0].aadhar}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Postal</th>
+                                                <td>{{result.[0].postal}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="col-lg-6 no-padding">
+                                    <table class="addrss-list">
+                                        <tbody>
+                                            <tr>
+                                                <th>Gender</th>
+                                                <td>{{result.[1].gender}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Date of Birth</th>
+                                                <td>{{result.[1].dob}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Ethincity</th>
+                                                <td>{{result.[3].ethincity}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Nationality</th>
+                                                <td>{{result.[3].nationality}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section id="profile" class="home-dat">
+                <div class="row no-margin home-det">
+
+                    <div class="col-md-12 home-dat">
+                        
+                        <div class="links">
+                            <div class="row ">
+                                <div class="col-xl-6 col-md-12">
+                                    
+                                </div>
+                                <div class="col-xl-6 col-md-12">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jumbo-address">
+                             <div class="sec-title" style="display: flex;align-items: center;justify-content: center;flex-direction: row;gap:450px">
+                    <h2>Personal Details</h2>
+                                        <a href="/update_personal" style="color:white;background-color: #80669d;padding:7px;border-radius:6px;">Update your personal information</a> 
+
+                </div>
+                            <div class="row no-margin">
+                                <div class="col-lg-6 no-padding">
+
+                                    <table class="addrss-list">
+                                        <tbody>
+                                            <tr>
+                                                <th>Employment status</th>
+                                                <td>{{result.[3].employment}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Disability</th>
+                                                <td>{{result.[3].disability}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th style="height:102px">Skills</th>
+                                                <td style="height:102px">{{result.[2].skills}}</td>
+                                            </tr>
+                                          
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="col-lg-6 no-padding">
+                                    <table class="addrss-list">
+                                        <tbody>
+                                            <tr>
+                                                <th style="height: 102px">Areas Interested In</th>
+                                                <td style="height:102px">{{result.[2].areas}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th style="height:102px">Activities Interested In</th>
+                                                <td style="height:102px">{{result.[2].activities}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+ <section id="profile" class="home-dat">
+                <div class="row no-margin home-det">
+
+                    <div class="col-md-12 home-dat">
+                        
+                        <div class="links">
+                            <div class="row ">
+                                <div class="col-xl-6 col-md-12">
+                                   
+                                </div>
+                                <div class="col-xl-6 col-md-12">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jumbo-address">
+                             <div class="sec-title" style="display: flex;align-items: center;justify-content: center;flex-direction: row;gap:582px">
+                    <h2>Address</h2>
+                    <a href="/update_contact" style="color:white;background-color: #80669d;padding:7px;border-radius:6px;">Update your contact information</a> 
+                </div>
+                            <div class="row no-margin">
+                                <div class="col-lg-6 no-padding">
+
+                                    <table class="addrss-list">
+                                        <tbody>
+                                            <tr>
+                                                <th>Building</th>
+                                                <td>{{result.[1].building}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>House Numnber</th>
+                                                <td>{{result.[1].house}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Street</th>
+                                                <td>{{result.[1].street}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>City</th>
+                                                <td>{{result.[1].city}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="col-lg-6 no-padding">
+                                    <table class="addrss-list">
+                                        <tbody>
+                                            <tr>
+                                                <th style="height: 102px">State</th>
+                                                <td style="height:102px">{{result.[1].state}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th style="height:102px">Residential Country</th>
+                                                <td style="height:102px">{{result.[1].country}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+           
+           
+
+            
+        </div>
+    </div>
+</body>
+
+<script src="/css/assets2/js/jquery-3.2.1.min.js"></script>
+<script src="/css/assets2/js/popper.min.js"></script>
+<script src="/css/assets2/js/bootstrap.min.js"></script>
+<script src="/css/assets2/js/script.js"></script>
+<script>
+    var loadFile = function (event) {
+  var image = document.getElementById("output");
+  image.src = URL.createObjectURL(event.target.files[0]);
+  document.getElementById("myimage").submit();
+};
+
+</script>
+
+
+</html>

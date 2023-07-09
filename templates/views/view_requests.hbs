@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Requests</title>
+      <link href="/css/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/css/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/css/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/css/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/css/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    a{
+        text-decoration: none;
+    }
+  </style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/css/assets2/images/fav.jpg">
+    <link rel="stylesheet" href="/css/assets2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/assets2/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/assets2/css/style.css" />
+    <style>
+      
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: #fffcfc !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+#button1{
+   color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+#button2{
+   color: #fff;
+    background-color: #0adcce;
+    border-color: #04b78d;
+}
+
+#button1:hover,#button1:focus{
+   color: #fff;
+ background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+#button3{
+    color: #fff;
+    background-color: #086ae3;
+    border-color: #00377b;
+    width:100px;
+    height:40px;
+}
+#button4{
+   color: #fff;
+    background-color: #e32908;
+    border-color: #7b0e00;
+}
+
+#flash {
+    z-index: 1;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    color: rgb(225, 47, 11);
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.card-text{
+  color: black;
+  font-weight: bolder;
+}
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 11px 32px -4px rgb(46, 46, 46);
+    -moz-box-shadow: 5px 11px 32px -4px rgb(87, 87, 87);
+    box-shadow: 5px 11px 32px -4px rgb(74, 74, 74);
+}
+.frontside{
+  -webkit-box-shadow: 5px 11px 32px -4px rgb(46, 46, 46);
+    -moz-box-shadow: 5px 11px 32px -4px rgb(87, 87, 87);
+    box-shadow: 5px 11px 32px -4px rgb(74, 74, 74);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #f2f8f6 !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+ .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 24px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  width:300px;
+}
+
+ .dropdown ul li {
+  min-width: 200px;
+}
+
+ .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  color: #666666;
+}
+
+ .dropdown ul a i {
+  font-size: 12px;
+}
+
+ .dropdown ul a:hover,
+ .dropdown ul .active:hover,
+ .dropdown ul li:hover>a {
+  color: #2dc997;
+}
+
+ .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+ .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+ .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+   .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+   .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+    </style>
+</head>
+
+<body >
+
+
+        <div class="wrapper" style="min-height:800px">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+    <div class="container-fluid overcover" >
+        <div class="container profile-box" style="width:90%">
+            <div class="head-top row">
+                <ul>
+                    <li><a id="a1" class="pro" href="user" >Home</a></li>
+              
+                  <li class="dropdown"><a href="/view_requests"><span>Requests</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a  href="/view_requests" class={{a1}} >All Requests</a></li>
+
+              <li class="dropdown"><a  id="a3" class={{a2}} href="/my_requests" >My Requests<i class="bi bi-chevron-right"></i></a>
+
+                <ul>
+                 <li><a  id="a3" class={{a2}} href="/my_requests" >My Requests</a></li>
+                  <li><a id="a4" class={{a3}} href="/my_accepted"  >My Accepted Requests</a></li>
+                  <li><a  id="a5" class={{a4}} href="/my_pending" >My Pending Requests</a></li>
+                </ul>
+              </li>
+               <li class="dropdown"><a  id="a6" class={{a5}} href="/others_accepted"  >Others Requests<i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a  id="a6" class={{a5}} href="/others_accepted"  >Others Accepted Requests</a></li>
+                  <li><a  id="a7" class={{a6}} href="/others_pending" >Others Pending Requests</a></li>
+
+                </ul>
+              </li>
+             
+             
+            </ul>
+          </li>  
+
+
+                       <li><a  id="a8" class="pro" class="pro" href="/new_request"  >Seek Help</a></li>
+
+        
+                    
+                </ul>
+            </div>
+              <div class="basic-detail row">
+                <div class="col-md-8 detail-col">
+                  <br>
+
+                   {{#if result}}
+                
+                    <h2 id="hii">{{title}}</h2>
+                    {{else}}
+           
+            <h2 id="hii">There are no "{{title}}" yet</h2>
+
+            {{/if}}
+                   
+                </div>
+
+            </div>
+           
+           
+
+
+          
+
+           <section id="team" class="pb-5" >
+    <div class="container" style="width:100%">
+                            <p class="valid" id="flash" style="font-size:20px;font-weight:bolder;">{{message}}</p>
+
+        <div class="row">
+            <!-- Team member -->
+            
+            
+
+            {{#each result}}
+            <!-- Team member -->
+            
+            <div class="col-xs-12 col-sm-6 col-md-4" >
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover'); ">
+ 
+                    <form >
+                          <input type="hidden" id="room" name="room" value={{this.rid}} style="display:none">
+                                                                       <input type="hidden" id="username" name="username" value={{../name_of_user}}  >
+                                                                        <input type="hidden" name="email" value={{../user}} style="display:none">
+                    
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card" style="margin-top:30px;height:430px;width:535px">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/{{this.image}}" alt="card image"></p>
+                                    <h4 class="card-title">{{this.name}}</h4><br>
+                                    <p class="card-text" >Email&nbsp&nbsp=>&nbsp&nbsp{{this.email}}</p><br>
+                                    <p class="card-text">Subject&nbsp&nbsp=>&nbsp&nbsp{{this.subject}}</p><br>
+                                    <p class="card-text" >Tags&nbsp&nbsp=>&nbsp&nbsp&nbsp&nbsp{{this.tag1}},&nbsp&nbsp&nbsp&nbsp{{this.tag2}}</p><br>
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                                                     
+
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="backside">
+                            <div class="card" style="width:535px;margin-top:30px;height:410px" >
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">{{this.name}}</h4><br>
+                      
+                    
+              <p class="card-text">Description&nbsp&nbsp=>&nbsp&nbsp{{this.message}}</p><br>
+              
+                  <div style="display: flex;align-items: center;justify-content: center; gap:5px">
+                                 <button id="button3" class="btn" name="chat"  formaction="chat"  style="display:{{this.chat}}">Chat</button><br><br>
+</div>
+                   
+                        </form>
+                                           <form action="/view_profile" method="post">
+                      <input type="hidden" id="room" name="room" value={{this.rid}} style="display:none">
+                                                                       <input type="hidden" id="username" name="username" value={{../name_of_user}}  >
+                                                                        <input type="hidden" name="email" value={{this.email}} style="display:none">
+                                                                        <input type="hidden" name="user" value={{../user}} style="display:none">
+                                                                      <input type="hidden" name="pagestatus" value={{../pagestatus}} style="display:none">
+
+                                                                        <div style="display: flex;align-items: center;justify-content: center; gap:5px">
+                    <input id="button4" class="btn" name="delete" type="submit" value="Delete" style="display:{{../delete_status}}">
+
+                    <input id="button1" class="btn" name="profile"  type="submit" value="View Profile" >
+                     <input id="button2" class="btn" name="accept" type="submit" value="Accept" style="display:{{this.accept}}"> 
+                 </form>
+                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+              {{/each}}
+            
+           
+
+            
+        </div>
+    </div>
+</section>
+<!-- Team -->
+
+                                           
+
+
+
+ 
+
+           
+           
+
+            
+        </div>
+    </div>
+</body>
+
+<script src="/css/assets2/js/jquery-3.2.1.min.js"></script>
+<script src="/css/assets2/js/popper.min.js"></script>
+<script src="/css/assets2/js/bootstrap.min.js"></script>
+<script src="/css/assets2/js/script.js"></script>
+<script>
+
+ let id = document.getElementById('flash');
+            setTimeout(function() {
+                var alertElement = document.getElementById("flash");
+                alertElement.style.display = "none";
+            }, 4000);
+</script>
+
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="/css/style1.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Bubbles Animation</h1>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+             <div id="logo">
+        
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="/user" style="font-size:32px">Helping Hands</a></h1>
+      </div>
+          <li><a class="nav-link scrollto " href="/user">Home</a></li>
+          <li><a class="nav-link scrollto" href="/user#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/user#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/user#portfolio">Portfolio</a></li>
+          
+          
+          <li><a class="nav-link scrollto" href="/user#contact">Contact</a></li>
+          
+          <li><a class="nav-link scrollto" href="/profile">Back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    <h3 id="flash"> {{message}}</h1>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="/update_contact" method="post" name="update_contact">
+                    <h1>Contact Information</h1>
+                    <br>
+                    <span>Update your details</span>
+                    <div class="social-container">
+                    </div>
+                    <input type="number" id="phone" name="phone" placeholder="Phone" id="phone" oninput="ph()">
+                    <p class="valid" id="eph"></p>
+                    <p class="valid" id="wph"></p>
+                    
+                    <input type="text" id="building" name="building" placeholder="building" oninput="build()" />
+                    <p class="valid" id="ebuild"></p>
+                    <input type="text" id="house" name="house" placeholder="house" oninput="ho()" />
+                    <p class="valid" id="eho"></p>
+                    <input type="text" id="street" name="street" placeholder="street" oninput="str()" />
+                    <p class="valid" id="estr"></p>
+                    <input type="text" id="city" name="city" placeholder="city" oninput="ci()" />
+                    <p class="valid" id="eci"></p>
+                    <input type="number" id="postal" name="postal" placeholder="Postal" id="postal" oninput="po()">
+                    
+                    <p class="valid" id="epo"></p>
+                    <input type="text" id="state" name="state" placeholder="state" oninput="st()" />
+                    <p class="valid" id="est"></p>
+                    <input type="text" id="country" name="country" placeholder="residential country" oninput="co()" />
+                    <p class="valid" id="eco"></p>
+                  
+                    
+                    <input id="button1" class="btn" type="submit" value="Update" disabled style="background-color:rgb(57, 56, 56)">
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello!</h1><br>
+                        <p>"A helping hand can be a ray of sunshine in a cloudy world. So try to be a rainbow in someone's cloud"</p><br>
+                        <a href="/profile" id="login-star" class="ghost">back to profile page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let f1 = 1,
+                f8 = 1,
+                f7 = 1,
+                f6 = 1,
+                f5 = 1,
+                f4 = 1,
+                f3 = 1,
+                f2 = 1,f9=1;
+            let b2 = document.getElementById('button1');
+            function build() {
+                let e = document.getElementById('building');
+                let x = document.getElementById('ebuild');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('ebuild').innerHTML = "Field cannot be empty";
+                    f1 = 1;
+                } else {
+                    x.style.display = "none";
+                    f1 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ho() {
+                let e = document.getElementById('house');
+                let x = document.getElementById('eho');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eho').innerHTML = "Field cannot be empty";
+                    f2 = 1;
+                } else {
+                    x.style.display = "none";
+                    f2 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function str() {
+                let e = document.getElementById('street');
+                let x = document.getElementById('estr');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('estr').innerHTML = "Field cannot be empty";
+                    f3 = 1;
+                } else {
+                    x.style.display = "none";
+                    f3 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ci() {
+                let e = document.getElementById('city');
+                let x = document.getElementById('eci');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eci').innerHTML = "Field cannot be empty";
+                    f4 = 1;
+                } else {
+                    x.style.display = "none";
+                    f4 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function st() {
+                let e = document.getElementById('state');
+                let x = document.getElementById('est');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('est').innerHTML = "Field cannot be empty";
+                    f5 = 1;
+                } else {
+                    x.style.display = "none";
+                    f5 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function co() {
+                let e = document.getElementById('country');
+                let x = document.getElementById('eco');
+                if (e.value.length == 0) {
+                    x.style.display = "block";
+                    document.getElementById('eco').innerHTML = "Field cannot be empty";
+                    f6 = 1;
+                } else {
+                    x.style.display = "none";
+                    f6 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+           function po() {
+                let e = document.getElementById('postal');
+                let x = document.getElementById('epo');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('epo').innerHTML = "Postal number cannot be empty";
+                    f7 = 1;
+                } else {
+                    x.style.display = "none";
+                    f7 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+            function ph() {
+                let flag = 0;
+                let e = document.getElementById('phone');
+                let x = document.getElementById('eph');
+                if (e.value.length == 0) {
+                    flag = 1;
+                    x.style.display = "block";
+                    document.getElementById('eph').innerHTML = "Phone number cannot be empty";
+                    f8 = 1;
+                } else {
+                    x.style.display = "none";
+                    f8 = 0;
+                }
+                if (e.value.length != 10 && flag == 0) {
+                    document.getElementById('wph').style.display = "block";
+                    document.getElementById('wph').innerHTML = "Phone number should be 10 characters";
+                    f9 = 1;
+                } else {
+                    document.getElementById('wph').style.display = "none";
+                    f9 = 0;
+                }
+                if (f1 == 1 || f2 == 1 || f3 == 1 || f4 == 1 || f5 == 1 || f6 == 1 || f7 == 1 || f8 == 1 || f9==1) {
+                    b2.disabled = true;
+                    b2.style.backgroundColor = 'rgb(57, 56, 56)';
+                    console.log('hi')
+                } else {
+                    console.log('hii')
+                    b2.style.backgroundColor = '#2dc997';
+                    b2.disabled = false;
+                }
+            }
+
+            
+        </script>
+</body>
+</html>
