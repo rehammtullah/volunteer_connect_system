@@ -1,0 +1,10 @@
+{
+   "version": 2,
+   "name": "helpinghands",
+   "builds": [
+      { "src": "now.js", "use": "@vercel/node" }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/now.js" }
+   ]
+}
